@@ -12,7 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+/*
+ * Programming II Craft Project
+ * Your Name
+ * Date
+ * Uses demo code from PROG 201 Programming II course
+ * https://github.com/janell-baxter/ProgrammingIICraftDemo
+ */
 namespace ProgrammingIICraftDemo
 {
     /// <summary>
