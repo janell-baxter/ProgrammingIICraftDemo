@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:ProgrammingIICraftDemo"
         mc:Ignorable="d"
         Title="Craft 2.0 by Your Name" Height="450" Width="800">
-    <Grid x:Name="MainGrid" Background="#FFF1F1F1" Loaded="MainGrid_Loaded">
+    <Grid x:Name="MainGrid" Background="#FFE0E0E0" Loaded="MainGrid_Loaded">
         <TextBlock x:Name="PlayerName" HorizontalAlignment="Left" Height="34" Margin="474,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Background="White"/>
-        <ScrollViewer Height="250" Margin="474,59,24,125" Width="302" VerticalScrollBarVisibility ="Auto">
-        <TextBlock x:Name="PlayerInventory" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"  Background="White"/>
+        <ScrollViewer Height="250" Margin="474,59,24,125" Width="302" VerticalScrollBarVisibility ="Auto" Background="White">
+        <TextBlock x:Name="PlayerInventory" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"  />
         </ScrollViewer>
-            <ScrollViewer Height="247"  Margin="10,20,356,167"   Width="434" VerticalScrollBarVisibility ="Auto">
-            <TextBlock x:Name="ConsoleOutput" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Background="White"/>
+        <ScrollViewer Height="247"  Margin="10,20,356,167"   Width="434" VerticalScrollBarVisibility ="Auto" Background="White">
+            <TextBlock x:Name="ConsoleOutput" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
         </ScrollViewer>
             <TextBox x:Name="ConsoleInput" HorizontalAlignment="Left" Height="37" Margin="10,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357"/>
         <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="384,276,0,0" VerticalAlignment="Top" Click="Submit_Click" Height="28" Width="60"/>
