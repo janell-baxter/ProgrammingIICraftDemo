@@ -98,6 +98,7 @@ namespace ProgrammingIICraftDemo
         {
             string output = $"{workshop.ShowPlayerName()}, what would you like to do?\n1) Create a new item\n2) Trade\n3) See all recipes\n";
             output += "Please enter 1, 2, or 3 in the box below and then click the submit button\n\n";
+           
             ConsoleOutput.Text = output;
         }
 
