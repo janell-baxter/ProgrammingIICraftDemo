@@ -24,9 +24,18 @@ namespace ProgrammingIICraftDemo
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    enum Mode
+    {
+        Setup,
+        Review,
+        Craft,
+        Trade
+    }
     public partial class MainWindow : Window
     {
         Workshop workshop = new Workshop();
+        Mode mode = Mode.Setup;
         bool SetUp = true;
         public MainWindow()
         {
@@ -51,44 +60,60 @@ namespace ProgrammingIICraftDemo
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
-            if (SetUp)
+            if (mode == Mode.Setup)
             {
                 if (ConsoleInput.Text != "")
                     workshop.SetPlayerName(ConsoleInput.Text);
 
-                SetUp = false;
+                mode = Mode.Review;
                 ConsoleOutput.Text = "";
                 ShowMenu();
                 RefreshInformationDisplays();
                 ConsoleInput.Text = "";
                 return;
             }
-
-
-            switch (ConsoleInput.Text)
+            else if (mode==Mode.Review)
             {
-                case "1":
-                    ConsoleOutput.Text = workshop.CreateNewItem();
-                    Pause();
-                    break;
-                case "2":
-                    ConsoleOutput.Text = workshop.Trade();
-                    Pause();
-                    break;
-                case "3":
-                    ConsoleOutput.Text = workshop.ShowRecipes();
-                    Pause();
-                    break;
-                case "m":
-                    ShowMenu();
-                    break;
-                default:
-                    ConsoleOutput.Text += "Please enter only 1, 2, or 3.\n";
-                    break;
-
+                ConsoleOutput.Text = workshop.ShowRecipes();
+            }
+            else if (mode == Mode.Craft)
+            {
+                ConsoleOutput.Text = workshop.CreateNewItem();
+            }
+            else if (mode == Mode.Trade)
+            {
+                ConsoleOutput.Text = workshop.Trade();
+            }
+            else
+            {
+                ShowMenu();
             }
 
-            ConsoleInput.Text = "";
+
+            //switch (ConsoleInput.Text)
+            //{
+            //    case "1":
+            //        ConsoleOutput.Text = workshop.CreateNewItem();
+            //        Pause();
+            //        break;
+            //    case "2":
+            //        ConsoleOutput.Text = workshop.Trade();
+            //        Pause();
+            //        break;
+            //    case "3":
+            //        ConsoleOutput.Text = workshop.ShowRecipes();
+            //        Pause();
+            //        break;
+            //    case "m":
+            //        ShowMenu();
+            //        break;
+            //    default:
+            //        ConsoleOutput.Text += "Please enter only 1, 2, or 3.\n";
+            //        break;
+
+            //}
+
+            //ConsoleInput.Text = "";
         }
         private void Pause()
         {
