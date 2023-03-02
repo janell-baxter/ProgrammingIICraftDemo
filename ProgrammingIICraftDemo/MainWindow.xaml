@@ -17,25 +17,15 @@
         </ScrollViewer>
         <TextBox x:Name="ConsoleInput" HorizontalAlignment="Left" Height="37" Margin="26,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357"/>
         <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="400,368,0,0" VerticalAlignment="Top" Click="Submit_Click" Height="28" Width="60"/>
-        <Button x:Name="CraftMode" Content="" HorizontalAlignment="Left" Margin="26,12,0,0" VerticalAlignment="Top" Height="90" Width="95">
-            <Button.Background>
-                <ImageBrush ImageSource="/Icon.bmp"/>
-            </Button.Background>
+        <Button x:Name="CraftMode" Content="Craft" HorizontalAlignment="Left" Margin="26,12,0,0" VerticalAlignment="Top" Height="90" Width="95" Click="CraftMode_Click">
+
         </Button>
-        <Button x:Name="ReviewMode" Content="" HorizontalAlignment="Left" Margin="140,12,0,0" VerticalAlignment="Top" Height="90" Width="95">
-            <Button.Background>
-                <ImageBrush ImageSource="/Icon.bmp"/>
-            </Button.Background>
+        <Button x:Name="RecipesMode" Content="Recipes" HorizontalAlignment="Left" Margin="140,12,0,0" VerticalAlignment="Top" Height="90" Width="95" Click="RecipesMode_Click">
+
         </Button>
-        <Button x:Name="TradeMode" Content="" HorizontalAlignment="Left" Margin="255,12,0,0" VerticalAlignment="Top" Height="90" Width="94">
-            <Button.Background>
-                <ImageBrush ImageSource="/Icon.bmp"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="OtherMode" Content="" HorizontalAlignment="Left" Margin="366,12,0,0" VerticalAlignment="Top" Height="90" Width="94">
-            <Button.Background>
-                <ImageBrush ImageSource="/Icon.bmp"/>
-            </Button.Background>
+
+        <Button x:Name="TradeMode" Content="Trade" HorizontalAlignment="Left" Margin="255,12,0,0" VerticalAlignment="Top" Height="90" Width="94" Click="TradeMode_Click">
+
         </Button>
 
     </Grid>
