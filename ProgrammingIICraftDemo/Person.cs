@@ -10,6 +10,6 @@ namespace ProgrammingIICraftDemo
     {
         public string Name { get; set; }
         public double Currency { get; set; }
-        public List<Item> Inventory = new List<Item>(0);
+        public List<Item> Inventory = new List<Item>();
     }
 }

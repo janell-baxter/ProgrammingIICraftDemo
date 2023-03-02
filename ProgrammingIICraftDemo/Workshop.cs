@@ -15,7 +15,12 @@ namespace ProgrammingIICraftDemo
             new Item() {Name="Chocolate", Amount = 3, AmountType = "pound(s)"},
             new Item() {Name="Water", Amount = 10, AmountType = "cup(s)"}
              } };
-        Person vendor = new Person();
+        Person vendor = new Person() {Inventory = new List<Item>
+        {
+            new Item() {Name="Chocolate", Amount = 1, AmountType = "pound(s)"}
+          
+             }
+        };
 
         public Workshop()
         {
@@ -52,12 +57,13 @@ namespace ProgrammingIICraftDemo
             }
             return output;
         }
-        //ShowPlayerInventory looks a lot like ShowRecipes
-        //Can you refactor so that there is less redundent code?
-        public string ShowPlayerInventory()
+        public string ShowInventory(string p)
         {
+            Person person = player;
+            if (p == "vendor") person = vendor;
+
             string output = $"Current inventory:\n";
-            foreach (Item i in player.Inventory)
+            foreach (Item i in person.Inventory)
             {
                 output += $"  * {i.Name} ({i.Amount})\n";
             }

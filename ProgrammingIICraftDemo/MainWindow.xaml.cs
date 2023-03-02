@@ -48,7 +48,7 @@ namespace ProgrammingIICraftDemo
         }
         private void RefreshInformationDisplays()
         {
-            PlayerInventory.Text = workshop.ShowPlayerInventory();
+            PlayerInventory.Text = workshop.ShowInventory("player");
             PlayerName.Text = workshop.ShowPlayerNameAndCurrency();
         }
         private void SetUp()
@@ -117,6 +117,7 @@ namespace ProgrammingIICraftDemo
         private void TradeMode_Click(object sender, RoutedEventArgs e)
         {
             mode = Mode.Trade;
+            //ConsoleOutput.Text = workshop.ShowInventory("vendor");
             ConsoleOutput.Text = workshop.Trade();
         }
         private void HideButtons()
