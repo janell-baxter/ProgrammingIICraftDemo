@@ -53,6 +53,9 @@ namespace ProgrammingIICraftDemo
         }
         private void SetUp()
         {
+            //Example to hide buttons
+            //and only show them when a condition has been met
+            //in this case - player enters name
             HideButtons();
             GetPlayerName();
         }
@@ -97,8 +100,6 @@ namespace ProgrammingIICraftDemo
         private void ShowMenu()
         {
             string output = $"{workshop.ShowPlayerName()}, what would you like to do?\nClick a button above to craft, trade, or see recipes.\n";
-
-           
             Output.Text = output;
         }
 
