@@ -28,9 +28,9 @@ namespace ProgrammingIICraftDemo
     enum Mode
     {
         Setup,
-        Review,
+        Buy,
         Craft,
-        Trade
+        Sell
     }
     public partial class MainWindow : Window
     {
@@ -58,21 +58,21 @@ namespace ProgrammingIICraftDemo
         }
         private void GetPlayerName()
         {
-            ConsoleOutput.Text = "Hello!\nPlease enter your name in the box below and then click the submit button.";
+            Output.Text = "Hello!\nPlease enter your name in the box below and then click the submit button.";
         }
 
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
             if (mode == Mode.Setup)
             {
-                if (ConsoleInput.Text != "")
-                    workshop.SetPlayerName(ConsoleInput.Text);
+                if (Input.Text != "")
+                    workshop.SetPlayerName(Input.Text);
 
-                mode = Mode.Review;
-                ConsoleOutput.Text = "";
+                mode = Mode.Buy;
+                Output.Text = "";
                 ShowMenu();
                 RefreshInformationDisplays();
-                ConsoleInput.Text = "";
+                Input.Text = "";
                 ShowButtons();
                 return;
             }
@@ -81,7 +81,7 @@ namespace ProgrammingIICraftDemo
             {
                 
             }
-            else if (mode == Mode.Trade)
+            else if (mode == Mode.Sell)
             {
                 
             }
@@ -90,7 +90,7 @@ namespace ProgrammingIICraftDemo
                 ShowMenu();
             }
 
-            ConsoleInput.Text = "";
+            Input.Text = "";
 
         }
       
@@ -99,38 +99,39 @@ namespace ProgrammingIICraftDemo
             string output = $"{workshop.ShowPlayerName()}, what would you like to do?\nClick a button above to craft, trade, or see recipes.\n";
 
            
-            ConsoleOutput.Text = output;
+            Output.Text = output;
         }
 
         private void CraftMode_Click(object sender, RoutedEventArgs e)
         {
             mode = Mode.Craft;
-            ConsoleOutput.Text = workshop.CreateNewItem();
+            Output.Text = workshop.ShowRecipes();
+            Output.Text += workshop.CreateNewItem();
         }
 
-        private void RecipesMode_Click(object sender, RoutedEventArgs e)
+        private void BuyMode_Click(object sender, RoutedEventArgs e)
         {
-            mode = Mode.Review;
-            ConsoleOutput.Text = workshop.ShowRecipes();
+            mode = Mode.Buy;
+            Output.Text = "Buy mode";
         }
 
-        private void TradeMode_Click(object sender, RoutedEventArgs e)
+        private void SellMode_Click(object sender, RoutedEventArgs e)
         {
-            mode = Mode.Trade;
-            //ConsoleOutput.Text = workshop.ShowInventory("vendor");
-            ConsoleOutput.Text = workshop.Trade();
+            mode = Mode.Sell;
+            //Output.Text = workshop.ShowInventory("vendor");
+            Output.Text = "Sell mode";
         }
         private void HideButtons()
         {
             CraftMode.Visibility = Visibility.Collapsed;
-            TradeMode.Visibility = Visibility.Collapsed;
-            RecipesMode.Visibility = Visibility.Collapsed;
+            SellMode.Visibility = Visibility.Collapsed;
+            BuyMode.Visibility = Visibility.Collapsed;
         }
         private void ShowButtons()
         {
             CraftMode.Visibility = Visibility.Visible;
-            TradeMode.Visibility = Visibility.Visible;
-            RecipesMode.Visibility = Visibility.Visible;
+            SellMode.Visibility = Visibility.Visible;
+            BuyMode.Visibility = Visibility.Visible;
         }
     }
 }

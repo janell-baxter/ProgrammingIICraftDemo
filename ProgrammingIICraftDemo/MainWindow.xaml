@@ -13,18 +13,18 @@
             <TextBlock x:Name="PlayerInventory" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top"  />
         </ScrollViewer>
         <ScrollViewer Height="247"  Margin="26,112,340,75"   Width="434" VerticalScrollBarVisibility ="Auto" Background="White">
-            <TextBlock x:Name="ConsoleOutput" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Output" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>
         </ScrollViewer>
-        <TextBox x:Name="ConsoleInput" HorizontalAlignment="Left" Height="37" Margin="26,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357"/>
+        <TextBox x:Name="Input" HorizontalAlignment="Left" Height="37" Margin="26,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="357"/>
         <Button x:Name="Submit" Content="Submit" HorizontalAlignment="Left" Margin="400,368,0,0" VerticalAlignment="Top" Click="Submit_Click" Height="28" Width="60"/>
         <Button x:Name="CraftMode" Content="Craft" HorizontalAlignment="Left" Margin="26,12,0,0" VerticalAlignment="Top" Height="90" Width="95" Click="CraftMode_Click">
 
         </Button>
-        <Button x:Name="RecipesMode" Content="Recipes" HorizontalAlignment="Left" Margin="140,12,0,0" VerticalAlignment="Top" Height="90" Width="95" Click="RecipesMode_Click">
+        <Button x:Name="BuyMode" Content="Buy" HorizontalAlignment="Left" Margin="140,12,0,0" VerticalAlignment="Top" Height="90" Width="95" Click="BuyMode_Click">
 
         </Button>
 
-        <Button x:Name="TradeMode" Content="Trade" HorizontalAlignment="Left" Margin="255,12,0,0" VerticalAlignment="Top" Height="90" Width="94" Click="TradeMode_Click">
+        <Button x:Name="SellMode" Content="Sell" HorizontalAlignment="Left" Margin="255,12,0,0" VerticalAlignment="Top" Height="90" Width="94" Click="SellMode_Click">
 
         </Button>
 
