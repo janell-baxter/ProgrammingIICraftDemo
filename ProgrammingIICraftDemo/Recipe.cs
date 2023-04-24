@@ -13,16 +13,21 @@ namespace ProgrammingIICraftDemo
 
         public List<Item> Requirements { get; set; }
 
+        //example using StringBuilder instead of string interpolation
         public string ShowRecipeDetails()
         {
-            string output = $"{Name}: {Description}\n     Ingredients: \n";
+            StringBuilder output = new StringBuilder();
+            output.AppendLine($"{Name}: {Description}")
+                  .AppendLine("     Ingredients:");
+
             int number = 1;
-            foreach (Item i in Requirements)
+            foreach (var ingredient in Requirements)
             {
-                output += $"         {number}) {i.Amount} {i.AmountType} of {i.Name}\n";
+                output.AppendLine($"       {number}) {ingredient.Amount} {ingredient.AmountType} of {ingredient.Name}");
                 number++;
             }
-            return output;
+
+            return output.ToString();
         }
 
     }
